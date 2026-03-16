@@ -1,0 +1,85 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+* {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #334155;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #64748b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Mobile utilities */
+.mobile-bottom-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.mobile-top-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* iOS smooth scrolling */
+.scroll-touch {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent pull-to-refresh on mobile */
+html, body {
+    overscroll-behavior-y: contain;
+}
+
+/* Safe area insets for fixed elements */
+.safe-bottom {
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+.safe-top {
+    padding-top: max(0.5rem, env(safe-area-inset-top));
+}
+
+/* Touch-friendly tap highlight */
+@media (hover: none) {
+    button, a, [role="button"] {
+        -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+    }
+}
+
+/* Prevent text selection on mobile nav */
+.no-select {
+    -webkit-user-select: none;
+    user-select: none;
+}
